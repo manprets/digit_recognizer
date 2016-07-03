@@ -59,6 +59,7 @@ def display(img):
     
     plt.axis('off')
     plt.imshow(one_image, cmap=cm.binary)
+    plt.show()
 
 # output image     
 display(images[IMAGE_TO_DISPLAY])
@@ -219,11 +220,12 @@ y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)
 
 
 # cost function
-cross_entropy = -tf.reduce_sum(y_*tf.log(y))
-
+# cross_entropy = -tf.reduce_sum(y_*tf.log(y))
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 
 # optimisation function
-train_step = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(cross_entropy)
+# train_step = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(cross_entropy)
+train_step = tf.train.AdamOptimizer(LEARNING_RATE).minimize(cross_entropy)
 
 # evaluation
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
@@ -273,6 +275,8 @@ sess = tf.InteractiveSession()
 
 sess.run(init)
 
+# start time
+t0 = time.time()
 
 # visualisation variables
 train_accuracies = []
@@ -280,7 +284,6 @@ validation_accuracies = []
 x_range = []
 
 display_step=1
-
 for i in range(TRAINING_ITERATIONS):
 
     #get new batch
@@ -310,6 +313,9 @@ for i in range(TRAINING_ITERATIONS):
     # train on batch
     sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys, keep_prob: DROPOUT})
 
+
+# print time to train convolutional network
+print("Time to train CONVNET:", round(time.time() - t0, 3))
 
 # check final accuracy on validation set  
 if(VALIDATION_SIZE):
