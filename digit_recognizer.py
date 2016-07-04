@@ -12,7 +12,7 @@ import tensorflow as tf
 # settings
 LEARNING_RATE = 1e-4
 # set to 20000 on local environment to get 0.99 accuracy
-TRAINING_ITERATIONS = 2000#30000        
+TRAINING_ITERATIONS = 200#30000        
     
 DROPOUT = 0.5
 BATCH_SIZE = 50
@@ -317,7 +317,8 @@ for i in range(TRAINING_ITERATIONS):
 
 
 # print time to train convolutional network
-print("Time to train CONVNET:", round(time.time() - t0, 3))
+time_to_train = round(time.time() - t0, 3)
+print("Time to train CONVNET: %d" % time_to_train)
 
 # check final accuracy on validation set  
 if(VALIDATION_SIZE):
@@ -331,7 +332,7 @@ if(VALIDATION_SIZE):
     plt.ylim(ymax = 1.1, ymin = 0.7)
     plt.ylabel('accuracy')
     plt.xlabel('step')
-    plt.show()
+    # plt.show()
 
 
 
@@ -373,7 +374,7 @@ np.savetxt('submission_softmax.csv',
 
 layer1_grid = layer1.eval(feed_dict={x: test_images[IMAGE_TO_DISPLAY:IMAGE_TO_DISPLAY+1], keep_prob: 1.0})
 plt.axis('off')
-plt.imshow(layer1_grid[0], cmap=cm.seismic )
+# plt.imshow(layer1_grid[0], cmap=cm.seismic )
 
 sess.close()
 
@@ -385,9 +386,40 @@ def get_reporting_accuracy():
     idx=true_vals!=pred_vals
     reporting_acc = (1.0-float(sum(idx))/len(true_vals))*100
     print "Reporting_acc =>", reporting_acc
+    return reporting_acc
 
-get_reporting_accuracy()
+reporting_acc = get_reporting_accuracy()
 
 
+def update_stats_log():
+    from datetime import datetime
+    
+    log_file = open("./stats_log.txt", "a")
+    log_file.write("Time: %s" % datetime.now().isoformat(' '))
+    log_file.write("\n")    
+    log_file.write("Training Iterations: %s" % TRAINING_ITERATIONS)
+    log_file.write("\n")
+    log_file.write("Input Size: %s" % image.get_shape())
+    log_file.write("\n")
+    log_file.write("h_conv1 Size: %s" % h_conv1.get_shape())
+    log_file.write("\n")
+    log_file.write("h_pool1 Size: %s" % h_pool1.get_shape())
+    log_file.write("\n")
+    log_file.write("h_conv2 Size: %s" % h_conv2.get_shape())
+    log_file.write("\n")
+    log_file.write("h_pool2 Size: %s" % h_pool2.get_shape())
+    log_file.write("\n")
+    log_file.write("h_fc1 Size: %s" % h_fc1.get_shape())
+    log_file.write("\n")
+    log_file.write("y Size: %s" % y.get_shape())
+    log_file.write("\n")
+    log_file.write("Time to train convnet: %s" % time_to_train)
+    log_file.write("\n")
+    log_file.write("Reporting accuracy: %s" % reporting_acc)
+    log_file.write("\n\n")
+    log_file.close()
+
+
+update_stats_log()
 
 
