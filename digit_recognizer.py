@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import time
 
 #%matplotlib inline
 import matplotlib.pyplot as plt
@@ -7,10 +8,11 @@ import matplotlib.cm as cm
 
 import tensorflow as tf
 
+
 # settings
 LEARNING_RATE = 1e-4
 # set to 20000 on local environment to get 0.99 accuracy
-TRAINING_ITERATIONS = 30000        
+TRAINING_ITERATIONS = 2000#30000        
     
 DROPOUT = 0.5
 BATCH_SIZE = 50
@@ -62,7 +64,7 @@ def display(img):
     plt.show()
 
 # output image     
-display(images[IMAGE_TO_DISPLAY])
+# display(images[IMAGE_TO_DISPLAY])
 
 
 labels_flat = data[[0]].values.ravel()
@@ -356,8 +358,8 @@ for i in range(0,test_images.shape[0]//BATCH_SIZE):
 print('predicted_lables({0})'.format(len(predicted_lables)))
 
 # output test image and prediction
-display(test_images[IMAGE_TO_DISPLAY])
-print ('predicted_lables[{0}] => {1}'.format(IMAGE_TO_DISPLAY,predicted_lables[IMAGE_TO_DISPLAY]))
+# display(test_images[IMAGE_TO_DISPLAY])
+# print ('predicted_lables[{0}] => {1}'.format(IMAGE_TO_DISPLAY,predicted_lables[IMAGE_TO_DISPLAY]))
 
 # save results
 np.savetxt('submission_softmax.csv', 
@@ -374,6 +376,17 @@ plt.axis('off')
 plt.imshow(layer1_grid[0], cmap=cm.seismic )
 
 sess.close()
+
+def get_reporting_accuracy():
+    pred=pd.read_csv('./submission_softmax.csv')
+    pred_vals=pred.loc[:,'Label']
+    true=pd.read_csv('./submission_true.csv')
+    true_vals=true.loc[:,'Label']
+    idx=true_vals!=pred_vals
+    reporting_acc = (1.0-float(sum(idx))/len(true_vals))*100
+    print "Reporting_acc =>", reporting_acc
+
+get_reporting_accuracy()
 
 
 
