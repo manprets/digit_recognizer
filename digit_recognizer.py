@@ -12,7 +12,7 @@ import tensorflow as tf
 # settings
 LEARNING_RATE = 1e-4
 # set to 20000 on local environment to get 0.99 accuracy
-TRAINING_ITERATIONS = 200#30000        
+TRAINING_ITERATIONS = 10001
     
 DROPOUT = 0.5
 BATCH_SIZE = 50
@@ -28,7 +28,7 @@ IMAGE_TO_DISPLAY = 10
 data = pd.read_csv('./data/train.csv')
 
 print('data({0[0]},{0[1]})'.format(data.shape))
-print (data.head())
+# print (data.head())
 
 images = data.iloc[:,1:].values
 images = images.astype(np.float)
@@ -138,6 +138,8 @@ def conv2d(x, W):
 def max_pool_2x2(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
 
+def avg_pool_2x2(x):
+    return tf.nn.avg_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
 
 
 # input & output of NN
@@ -204,11 +206,14 @@ h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
 h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 #print (h_fc1.get_shape()) # => (40000, 1024)
 
+W_fc11 = weight_variable([1024, 1024])
+b_fc11 = bias_variable([1024])
+
+h_fc11 = tf.nn.relu(tf.matmul(h_fc1, W_fc11) + b_fc11)
+
 # dropout
 keep_prob = tf.placeholder('float')
-h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
-
-
+h_fc1_drop = tf.nn.dropout(h_fc11, keep_prob)
 
 
 # readout layer for deep net
@@ -222,8 +227,8 @@ y = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)
 
 
 # cost function
-# cross_entropy = -tf.reduce_sum(y_*tf.log(y))
-cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
+cross_entropy = -tf.reduce_sum(y_*tf.log(y))
+# cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 
 # optimisation function
 # train_step = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(cross_entropy)
@@ -250,7 +255,6 @@ def next_batch(batch_size):
     global train_labels
     global index_in_epoch
     global epochs_completed
-    
     start = index_in_epoch
     index_in_epoch += batch_size
     
@@ -302,6 +306,8 @@ for i in range(TRAINING_ITERATIONS):
                                                             y_: validation_labels[0:BATCH_SIZE], 
                                                             keep_prob: 1.0})                                  
             print('training_accuracy / validation_accuracy => %.2f / %.2f for step %d'%(train_accuracy, validation_accuracy, i))
+            #print ("index_in_epoch: %d" % index_in_epoch) 
+            #print ("epochs_completed: %d" % epochs_completed) 
             
             validation_accuracies.append(validation_accuracy)
             x_range.append(i)
@@ -374,7 +380,7 @@ np.savetxt('submission_softmax.csv',
 
 layer1_grid = layer1.eval(feed_dict={x: test_images[IMAGE_TO_DISPLAY:IMAGE_TO_DISPLAY+1], keep_prob: 1.0})
 plt.axis('off')
-# plt.imshow(layer1_grid[0], cmap=cm.seismic )
+plt.imshow(layer1_grid[0], cmap=cm.seismic )
 
 sess.close()
 
@@ -404,19 +410,25 @@ def update_stats_log():
     log_file.write("h_conv1 Size: %s" % h_conv1.get_shape())
     log_file.write("\n")
     log_file.write("h_pool1 Size: %s" % h_pool1.get_shape())
+    #log_file.write("\n")
+    log_file.write(" Pooling Type: Max")
     log_file.write("\n")
     log_file.write("h_conv2 Size: %s" % h_conv2.get_shape())
     log_file.write("\n")
     log_file.write("h_pool2 Size: %s" % h_pool2.get_shape())
+    # log_file.write("\n")
+    log_file.write(" Pooling Type: Max")
     log_file.write("\n")
     log_file.write("h_fc1 Size: %s" % h_fc1.get_shape())
+    log_file.write("\n")
+    log_file.write("h_fc11 Size: %s" % h_fc11.get_shape())
     log_file.write("\n")
     log_file.write("y Size: %s" % y.get_shape())
     log_file.write("\n")
     log_file.write("Time to train convnet: %s" % time_to_train)
     log_file.write("\n")
     log_file.write("Reporting accuracy: %s" % reporting_acc)
-    log_file.write("\n\n")
+    log_file.write("\n\n\n")
     log_file.close()
 
 

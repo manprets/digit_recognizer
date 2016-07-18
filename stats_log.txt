@@ -1,0 +1,417 @@
+Time: 2016-07-04 11:32:44.941653
+Training Iterations: 200
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 15.647
+Reporting accuracy: 91.2464285714
+
+Time: 2016-07-04 11:46:28.597256
+Training Iterations: 200
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 16.126
+Reporting accuracy: 90.3107142857
+
+
+Time: 2016-07-04 12:27:37.302535
+Training Iterations: 30000
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) avg_pooling
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) avg_pooling
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2330.025
+Reporting accuracy: 99.35
+
+
+Time: 2016-07-04 13:18:47.553453
+Training Iterations: 30000
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2282.666
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-04 16:03:25.733761
+Training Iterations: 3001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 222.092
+Reporting accuracy: 98.1571428571
+
+
+Time: 2016-07-04 16:42:12.312887
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2263.684
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-04 18:28:01.155320
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32)
+Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64)
+Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2243.224
+Reporting accuracy: 99.4071428571
+
+
+Time: 2016-07-04 21:55:37.905723
+Training Iterations: 301
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 24.812
+Reporting accuracy: 92.8678571429
+
+
+Time: 2016-07-04 22:32:21.714930
+Training Iterations: 31
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 2.944
+Reporting accuracy: 63.7285714286
+
+
+Time: 2016-07-04 22:36:48.137447
+Training Iterations: 3001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 230.309
+Reporting accuracy: 98.1214285714
+
+
+Time: 2016-07-04 23:16:49.373428
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 2345.891
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-05 06:12:21.197200
+Training Iterations: 20001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 1530.194
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-05 06:41:11.021675
+Training Iterations: 10001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 774.336
+Reporting accuracy: 99.0
+
+
+Time: 2016-07-05 07:35:57.690566
+Training Iterations: 40001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 3048.784
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-05 17:48:23.675273
+Training Iterations: 40001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 3033.512
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-05 22:51:31.013454
+Training Iterations: 20001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 1512.477
+Reporting accuracy: 99.3678571429
+
+
+Time: 2016-07-06 06:46:35.148189
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2255.216
+Reporting accuracy: 99.3464285714
+
+
+Time: 2016-07-06 13:12:00.811260
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 512)
+y Size: (?, 10)
+Time to train convnet: 2297.193
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-13 00:37:02.186187
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2453.745
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-13 05:58:23.412947
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2248.963
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-13 06:25:13.310000
+Training Iterations: 20001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 1507.192
+Reporting accuracy: 99.2642857143
+
+
+Time: 2016-07-13 07:05:13.992093
+Training Iterations: 30001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 2263.815
+Reporting accuracy: 99.3321428571
+
+
+Time: 2016-07-13 08:25:26.736316
+Training Iterations: 50001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 3708.314
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-13 20:00:09.191178
+Training Iterations: 50001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 3759.681
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-14 00:08:22.303145
+Training Iterations: 50001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 14191.618
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-14 06:56:33.615992
+Training Iterations: 50001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 1144.896
+Reporting accuracy: 98.325
+
+
+Time: 2016-07-14 09:12:24.507718
+Training Iterations: 50001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 7328.225
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-14 18:49:11.867759
+Training Iterations: 20001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 1508.861
+Reporting accuracy: 99.3464285714
+
+
+Time: 2016-07-15 21:39:17.151376
+Training Iterations: 20001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 1636.44
+Reporting accuracy: 9.92857142857
+
+
+Time: 2016-07-15 22:23:24.489630
+Training Iterations: 10001
+Input Size: (?, 28, 28, 1)
+h_conv1 Size: (?, 28, 28, 32)
+h_pool1 Size: (?, 14, 14, 32) Pooling Type: Max
+h_conv2 Size: (?, 14, 14, 64)
+h_pool2 Size: (?, 7, 7, 64) Pooling Type: Max
+h_fc1 Size: (?, 1024)
+h_fc11 Size: (?, 1024)
+y Size: (?, 10)
+Time to train convnet: 814.479
+Reporting accuracy: 99.0571428571
+
+
